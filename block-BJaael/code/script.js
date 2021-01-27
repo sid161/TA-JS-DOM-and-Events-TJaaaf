@@ -1,43 +1,41 @@
-let main = document.querySelector("main");
 
-for(let i = 0; i < 500; i++) {
-    let div = document.createElement('div');
-    div.classList.add('box');
-    div.innerText = i;
-    main.append(div);
+function randomNumber(max){
+    return Math.floor(Math.random() * max);
 }
 
-let div = document.querySelectorAll(".box");
+function generateRandomColor(){
+    let hexCharacters = '0123456789abcdef';
 
-div.forEach((box) => {
-   box.addEventListener("mousemove", handlerNumber);
-   box.addEventListener("mousemove", handlerColor);
-});
+    let color = "#";
 
-function handlerNumber(){
-    div.forEach((box) => {
-        let randomNumber = randomNumberGenerator();
-        box.innerText = randomNumber;
-    });
-
-}
-
-function handlerColor(){
-    div.forEach((box) => {
-    let randomColor = randomColorGenerator();
-    box.style.backgroundColor = randomColor;
-    });
-}
-
-function randomNumberGenerator() {
-    let randomNumber = Math.floor(Math.random()*500);
-    return randomNumber;
-}
-
-function randomColorGenerator () {
-    let color ='0123456789abcdef';
-    let code = '#';
-    for(let i = 0; i < 6; i++ ) {
-      code = code + color.charAt(Math.floor(Math.random()*16));      
+    for(let i = 0; i < 6; i++){
+        let randomNumber = getRandomNumber(16);
+        color = color + hexCharacters(randomNumber);
     }
-    return code;
+
+    return color;
+}
+
+let parentBox = document.querySelector(".boxes");
+
+for(let i = 0; i < 500; i++){
+    let div = document.createElement("div");
+    div.classList.add('box');
+
+    let h3 = document.createElement("h3");
+    let randomNo = getRandomNumber(500);
+    h3.innerText = randomNo;
+
+    div.append(h3);
+    parentBox.append(div);
+}
+let allBoxes = document.querySelector('.box')
+function handleMouseMove(){
+    allBoxes.forEach(box => {
+        box.style.backgroundColor = generateRandomColor;
+        box.querySelector("h3").innerText = getRandomNumber(500);
+    });
+    
+}
+
+parentBox.addEventListener('mousemove', handleMouseMove);

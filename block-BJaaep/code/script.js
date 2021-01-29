@@ -1,41 +1,21 @@
-let ul = document.querySelector('ul');
-let li1 = ul[0].querySelectorAll("li");
-let li2 = ul[1].querySelectorAll("li");
+let firstBoxes = document.querySelectorAll('.first li');
+let secondBox = document.querySelectorAll('.second');
 
+firstBoxes.forEach((box,index) => {
+    box.addEventListener('click', (event) => {
+        event.target.innerText = index + 1;
 
-for(let i = 0; i < li1.length; i++){
-    let span = document.createElement('span');
-    span.innerText = i + 1;
-    span.style.display = "none";
-    li1[i].append(span);
-    li1[i].addEventListener('click', function(){
-        handleClick(li1[i]);
-    }); 
-}
+        setTimeout(() => {
+            event.target.innerText = "";
+        },5000);
+    });
+});
 
+secondBox.addEventListener('click', (event) => {
+    let text = event.target.dataset.text;
+    event.target.innerText = text;
 
- function handleClick(ele) {
-    let span = ele.querySelector('span');
-    span.style.display ="inline"
     setTimeout(() => {
-        span.style.display="none"; 
-    }, 5000);
-}
-/**************Second List *************************/
-
-for(let i = 0; i < li2.length; i++){
-    let span = document.createElement('span');
-    span.innerText = i + 1;
-    span.style.display = "none";
-    li2[i].append(span);
-}
-
-ul[1].addEventListener('click',handleEvent);
-
-function handleEvent(event) {
-    let span = event.target.querySelector('span');
-    span.style.display="inline";
-    setTimeout(() => {
-        span.style.display="none"; 
-    }, 5000);
-}
+        event.target.innerText = "";
+    });
+});

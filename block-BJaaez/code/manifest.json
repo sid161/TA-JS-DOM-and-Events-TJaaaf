@@ -1,9 +1,9 @@
 {
     
-        "name": "Simple Greeting Dashboard",
+        "name": "Todo App Chrome Extension",
         "version": "1.0",
-        "description": "This Chrome extension greets the user each time they open a new tab",
-        "manifest_version": "2",
+        "description": "This Chrome extension opens a todo app for user each time they open a new tab",
+        "manifest_version": 2,
         "Chrome_url_overides": {
             "newtab": "index.html"
         }

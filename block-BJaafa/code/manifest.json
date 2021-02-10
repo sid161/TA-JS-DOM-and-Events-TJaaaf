@@ -1,0 +1,17 @@
+{
+    "name": "Simple Greeting Dashboard",
+    "version": "1.0",
+    "description": "Say Hi to the User",
+    "manifest_version": 2,
+    "Chrome_url_overides": {
+        "new tab": "index.html"
+    },
+
+    "permissions": [
+        "activeTab"
+      ],
+   "icons": {
+       "128": "icon.png"
+       }
+
+}

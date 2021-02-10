@@ -1,0 +1,12 @@
+{
+    
+        "name": "Simple Greeting Dashboard",
+        "version": "1.0",
+        "description": "This Chrome extension greets the user each time they open a new tab",
+        "manifest_version": "2",
+        "Chrome_url_overides": {
+            "newtab": "index.html"
+        }
+
+    
+}

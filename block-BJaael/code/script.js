@@ -1,4 +1,37 @@
 
+
+
+
+
+
+
+
+
+
+let parentBox = document.querySelector('.boxes');
+for(i = 0; i < 500; i++){
+    div.createElement('div');
+    div.classList.add('.box');
+
+    let h3 = document.querySelector('h3');
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function randomNumber(max){
     return Math.floor(Math.random() * max);
 }

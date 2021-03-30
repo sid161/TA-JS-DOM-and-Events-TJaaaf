@@ -1,15 +1,16 @@
-let first = document.querySelector(".first");
-let second = document.querySelector(".second");
+let first = document.querySelector('.first');
+let second = document.querySelector('.second');
+
 
 function clickHandler(){
-    first.style.backgroundColor = colorGenerator;
+    first.style.backgroundColor = RandomColorGenerator;
 }
 
 function mousemoveHandler(){
-    second.style.backgroundColor = colorGenerator;
+    second.style.backgroundColor = RandomColorGenerator;
 }
 
-function colorGenerator(){
+function RandomColorGenerator(){
     let color = "0123456789ABCDEF";
     let code = "#";
     for(let i = 0; i<6 ; i++){
@@ -18,5 +19,18 @@ function colorGenerator(){
     console.log(code);
     return code;
 }
-first.addEventListener("click",clickHandler);
-second.addEventListener("mousemove",mousemoveHandler);
+
+first.addEventListener('click',clickHandler);
+second.addEventListener('mouseover',mousemoveHandler);
+
+
+
+
+
+
+
+
+
+
+
+

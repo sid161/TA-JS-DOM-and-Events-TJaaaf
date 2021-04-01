@@ -1,36 +1,17 @@
 let display = document.querySelector('.display');
-let keys = document.querySelector('.keys');
+let initialValue = 0;
+let allBts  = document.querySelector('keys');
 
-keys.addEventListener('click', handleClick);
-
-function handleClick(event){
+function handleBtnClick(event){
   console.log(event.target.innerText);
 }
 
-if(event.target.classList.contains('number')){
-  if(display.innerText.endsWith("+") ||
-  display.innerText.endsWith("-") ||
-  display.innerText.endsWith("*") ||
-  display.innerText.endsWith("/")
-  ) {
-    display.innerText = display.innerText +" " +event.target.dataset.content;
-  } else {
-    display.innerText = display.innerText + event.target.dataset.content;
-  }
+allBts.forEach(btn => {
+  allBts.addEventListener("click",handleBtnClick);
+});
 
-  console.log(display.innerText);
-}
+display.innerText = initialValue;
 
-if (event.target.classList.contains('operation')) {        
-  display.innerText = display.innerText + event.target.dataset.content; 
-  console.log(display.innerText);        
-}
-if (event.target.dataset.content === 'C') {
-  display.innerText = "";
-}  
-if(event.target.dataset.content === '='){
-  display.innerText = eval(display.innerText);
-}  
 
 
 

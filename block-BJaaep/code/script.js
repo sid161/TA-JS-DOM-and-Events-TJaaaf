@@ -1,4 +1,15 @@
-let firstBoxes = document.querySelectorAll('.first li');
+
+
+
+
+
+
+
+
+
+
+
+let firstBoxes = document.querySelectorAll('.first');
 let secondBox = document.querySelectorAll('.second');
 
 firstBoxes.forEach((box,index) => {
